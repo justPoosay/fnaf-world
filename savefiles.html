@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Characters Grid</title>
+    <link rel="stylesheet" href="./css/savefiles.css">
+    <script>
+        function fadeOut() {
+            console.log("Potential error..?");
+
+            const overlay = document.querySelector('.overlay');
+            if (overlay) {
+                console.log("button pressed");
+                overlay.style.opacity = '1';
+            };
+
+            // Po 1500ms przekierowanie na inną stronę
+            setTimeout(function () {
+                window.location.href = "./characters.html"; // Zmień na adres, na który chcesz przekierować
+            }, 1500);
+        };
+
+        window.addEventListener('load', function () {
+            document.body.classList.add('loaded');
+        });
+    </script>
+
+</head>
+
+<body>
+    <div class="menu-container">
+        <div class="overlay" id="overlay"></div>
+        <div class="content">
+            <img class="pick_your_file" src="./assets/images/Other/pick_your_file.png" alt="">
+
+            <div class="slot-selection">
+                <img src="./assets/images/Other/slot_1.png" alt="button" onclick="" />
+                <img src="./assets/images/Other/slot_2.png" alt="button" onclick="" />
+                <img src="./assets/images/Other/slot_3.png" alt="button" onclick="" />
+            </div>
+        </div>
+        <div class="button" id="startButton" onclick="fadeOut()">
+        </div>
+    </div>
+</body>
+
+</html>

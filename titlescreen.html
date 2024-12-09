@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Characters Grid</title>
+    <link rel="stylesheet" href="./css/titlescreen.css">
+    <script>
+        function fadeOut() {
+            console.log("Potential error..?");
+
+            const overlay = document.querySelector('.overlay');
+            if (overlay) {
+                console.log("button pressed");
+                overlay.style.opacity = '1';
+            };
+
+            // Po 1500ms przekierowanie na inną stronę
+            setTimeout(function () {
+                window.location.href = "./savefiles.html"; // Zmień na adres, na który chcesz przekierować
+            }, 1500);
+        };
+
+        window.addEventListener('load', function () {
+            document.body.classList.add('loaded');
+        });
+    </script>
+
+</head>
+
+<body>
+    <div class="menu-container">
+        <div class="overlay" id="overlay"></div>
+        <div class="menu-title">
+            <img class="logo" src="./assets/images/Other/gamelogo.gif" alt="error!">
+            <img class="freddycrew" src="./assets/images/Other/4575.png" alt="error!">
+            <img class="corner-img" src="./assets/images/Other/Copyright.png" alt="Corner Image">
+            <div class="button" id="startButton" onclick="fadeOut()">
+                <img src="./assets/images/Other/button-start-final.gif" alt="button" />
+            </div>
+            <canvas id="starsCanvas"></canvas>
+<script>
+  const canvas = document.getElementById("starsCanvas");
+  const ctx = canvas.getContext("2d");
+
+  // Rozmiar kontenera
+  canvas.width = 840;
+  canvas.height = 483;
+
+  // Centrum elipsy
+  const centerX = canvas.width / 2;
+  const centerY = canvas.height / 2;
+
+  // Wymiary elipsy
+  const radiusX = 200; // Poziomy promień
+  const radiusY = 100; // Pionowy promień
+
+  const stars = [];
+  const numStars = 50; // Liczba gwiazdek
+
+  // Funkcja do rysowania gwiazdek
+  function drawStar(x, y, radius, points, innerRadius, color, opacity) {
+    const angleStep = Math.PI / points; // Kąt między wierzchołkami gwiazdy
+    ctx.beginPath();
+    for (let i = 0; i < 2 * points; i++) {
+      const angle = i * angleStep; // Kąt każdego wierzchołka
+      const r = i % 2 === 0 ? radius : innerRadius; // Przełączanie między zewnętrznym i wewnętrznym promieniem
+      const starX = x + r * Math.cos(angle);
+      const starY = y + r * Math.sin(angle);
+      ctx.lineTo(starX, starY);
+    }
+    ctx.closePath();
+    ctx.globalAlpha = opacity; // Ustawienie przezroczystości
+    ctx.fillStyle = color;
+    ctx.fill();
+    ctx.globalAlpha = 1; // Reset przezroczystości do domyślnej
+  }
+
+  // Generowanie gwiazd
+  for (let i = 0; i < numStars; i++) {
+    const angle = Math.random() * 2 * Math.PI; // Losowy kąt (0 do 360 stopni)
+    const distance = Math.random(); // Losowy dystans od centrum (0-1)
+    stars.push({
+      x: centerX + radiusX * distance * Math.cos(angle), // Startowa pozycja X
+      y: centerY + radiusY * distance * Math.sin(angle), // Startowa pozycja Y
+      dx: Math.cos(angle) * (Math.random() * 1 + 1), // Szybsza prędkość X
+      dy: Math.sin(angle) * (Math.random() * 1 + 1), // Szybsza prędkość Y
+      radius: Math.random() * 5 + 4, // Większy promień gwiazdy
+      points: 7, // Liczba ramion gwiazdy
+      innerRadius: Math.random() * 3 + 2, // Większy wewnętrzny promień gwiazdy
+      color: `hsl(${Math.random() * 360}, 100%, 80%)`, // Losowy jasny kolor
+      opacity: Math.random(), // Początkowa przezroczystość
+      opacityChange: Math.random() * 0.03 + 0.02 // Początkowa prędkość migotania
+    });
+  }
+
+  // Funkcja do zmiany prędkości migotania
+  function updateOpacityChange() {
+    stars.forEach(star => {
+      star.opacityChange = Math.random() * 0.03 + 0.02; // Nowa losowa prędkość migotania
+    });
+  }
+
+  // Rysowanie gwiazdek
+  function drawStars() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    stars.forEach(star => {
+      drawStar(star.x, star.y, star.radius, star.points, star.innerRadius, star.color, star.opacity);
+    });
+  }
+
+  // Aktualizowanie pozycji gwiazdek
+  function updateStars() {
+    stars.forEach(star => {
+      // Poruszanie gwiazdki
+      star.x += star.dx;
+      star.y += star.dy;
+
+      // Migotanie gwiazdki
+      star.opacity += star.opacityChange;
+      if (star.opacity > 1 || star.opacity < 0) {
+        star.opacityChange = -star.opacityChange; // Odwracanie kierunku migotania
+      }
+
+      // Jeśli gwiazdka opuści ekran, resetuj ją do centrum elipsy
+      if (
+        star.x < 0 || 
+        star.x > canvas.width || 
+        star.y < 0 || 
+        star.y > canvas.height
+      ) {
+        const angle = Math.random() * 2 * Math.PI; // Losowy kąt
+        const distance = Math.random();
+        star.x = centerX + radiusX * distance * Math.cos(angle);
+        star.y = centerY + radiusY * distance * Math.sin(angle);
+        star.dx = Math.cos(angle) * (Math.random() * 1 + 1);
+        star.dy = Math.sin(angle) * (Math.random() * 1 + 1);
+        star.opacity = Math.random();
+      }
+    });
+  }
+
+  // Animacja
+  function animate() {
+    drawStars();
+    updateStars();
+    requestAnimationFrame(animate);
+  }
+
+  // Uruchamianie animacji z opóźnieniem
+  setTimeout(() => {
+    animate();
+
+    // Co 1 sekundę zmienia prędkość migotania
+    setInterval(updateOpacityChange, 1000);
+  }, 4000); // 4-sekundowe opóźnienie
+</script>
+
+        </div>
+    </div>
+</body>
+
+</html>

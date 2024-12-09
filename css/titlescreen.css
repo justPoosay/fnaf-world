@@ -1,0 +1,166 @@
+html,
+body {
+  background-color: black;
+  margin: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  box-sizing: border-box;
+  cursor: url("../assets/images/Other/4708.cur"), default;
+}
+
+body {
+  visibility: hidden;
+}
+
+body.loaded {
+  visibility: visible;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* Kontener dla menu i overlay */
+.menu-container {
+  position: relative; 
+  overflow: hidden; /* Dodaj, aby zachować proporcje */
+  border: 2px solid white;
+  min-width: 840px;
+  min-height: 483px;
+  max-width: 840px;
+  max-height: 483px;
+  background: url("../assets/images/Other/2384.png") center/cover no-repeat;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+
+/* Początkowy stan .overlay - niewidoczny */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0; /* Początkowa przezroczystość to 0, czyli niewidoczny */
+  z-index: 999; /* Wyższy z-index niż .menu, aby overlay był nad nim */
+  pointer-events: none; /* Pozwól na interakcję z menu, mimo że overlay jest ukryte */
+  transition: opacity 1s ease-out; /* Animacja zmieniająca opacity */
+}
+
+/* Menu pozostaje widoczne i nie zmienia się przez onClick */
+.menu-title {
+  background-image: url(../assets/images/Other/4574.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  position: absolute;
+  opacity: 1; /* Menu zawsze widoczne */
+  z-index: 10; /* Menu ma niższy z-index, więc overlay pojawi się na wierzchu */
+  overflow: hidden;
+}
+
+.freddycrew {
+  position: absolute;
+  z-index: 11;
+  bottom: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: slideUp 2s linear forwards;
+  width: 100%;
+}
+
+.logo {
+  position: absolute;
+  width: 100vh;
+  top: -2%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: slideHorizontally 3s linear forwards;
+  visibility: hidden;
+  z-index: 0;
+}
+
+.corner-img {
+  position: absolute; /* Pozycjonowanie względem przodka z pozycją "relative" */
+  bottom: 20px; /* Odległość od dolnej krawędzi */
+  right: 20px; /* Odległość od prawej krawędzi */
+  width: 200px; /* Szerokość obrazka */
+  height: auto; /* Zachowanie proporcji */
+  z-index: 15; /* Na wierzchu innych elementów */
+}
+
+@keyframes slideUp {
+  from {
+    bottom: -150%;
+  }
+  to {
+    bottom: -15%;
+  }
+}
+
+@keyframes slideHorizontally {
+  0% {
+    left: -20%;
+    visibility: hidden;
+  }
+  40% {
+    left: -50%;
+    visibility: hidden;
+  }
+  100% {
+    left: 50%;
+    transform: translateX(-50%);
+    visibility: visible;
+  }
+}
+
+.button {
+  width: 330px;
+  height: 85px;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  bottom: -100%;
+  right: -100%;
+  z-index: 20; /* Większy niż z-index .corner-img */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  animation: buttonMove 3.5s linear forwards;
+  transition: opacity 1s;
+}
+
+
+.button img {
+  border: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@keyframes buttonMove {
+  0% {
+    bottom: 1%;
+    right: -100%;
+  }
+  100% {
+    bottom: 1%;
+    right: 50%;
+    transform: translateX(50%);
+  }
+}

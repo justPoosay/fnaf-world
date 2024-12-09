@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Characters Grid</title>
+    <link rel="stylesheet" href="./css/characters.css">
+    <script src="./js/script.js" defer></script>
+    <script>
+        window.addEventListener('load', function () {
+            document.body.classList.add('loaded');
+        });
+    </script>
+
+
+</head>
+
+<body>
+    <div class="selection-screen">
+        <div class="character-grid">
+            <div class="character-headshot" data-gif="./assets/images/Characters/Adventure_Freddy_Fazbear.gif"
+                data-attack1="./assets/images/Attacks/Mic_Toss.gif"
+                data-attack2="./assets/images/Attacks/Pizza_Wheel.gif"
+                data-attack3="./assets/images/Attacks/Birthday.gif">
+                <img src="./assets/images/Headshots/Freddy_Fazbear.png" alt="Freddy">
+            </div>
+            <div class="character-headshot" data-gif="./assets/images/Characters/Adventure_Bonnie.gif"
+                data-attack1="./assets/images/Attacks/Bite.gif" data-attack2="./assets/images/Attacks/Bash_Jam.gif"
+                data-attack3="./assets/images/Attacks/Happy_Jam.gif">
+                <img src="./assets/images/Headshots/Bonnie.png" alt="Bonnie">
+            </div>
+            <div class="character-headshot" data-gif="./assets/images/Characters/Adventure_Chica.gif"
+                data-attack1="./assets/images/Attacks/Cupcake.gif"
+                data-attack2="./assets/images/Attacks/Party_Favors.gif"
+                data-attack3="./assets/images/Attacks/Regen_Song.gif">
+                <img src="./assets/images/Headshots/Chica.png" alt="Chica">
+            </div>
+            <div class="character-headshot" data-gif="./assets/images/Characters/Adventure_Foxy.gif"
+                data-attack1="./assets/images/Attacks/Hook.gif" data-attack2="./assets/images/Attacks/Jumpscare.gif"
+                data-attack3="./assets/images/Attacks/Hot_Cheese.gif">
+                <img src="./assets/images/Headshots/Foxy.png" alt="Foxy">
+            </div>
+            <div class="character-headshot" data-gif="./assets/images/Characters/Adventure_Toy_Bonnie.gif"
+                data-attack1="./assets/images/Attacks/Bash_Jam.gif" data-attack2="./assets/images/Attacks/Munchies.gif"
+                data-attack3="./assets/images/Attacks/Prize_Ball.gif">
+                <img src="./assets/images/Headshots/Toy_Bonnie.png" alt="Toy Bonnie">
+            </div>
+            <div class="character-headshot" data-gif="./assets/images/Characters/Adventure_Toy_Chica.gif"
+                data-attack1="./assets/images/Attacks/Cupcake.gif" data-attack2="./assets/images/Attacks/Birthday.gif"
+                data-attack3="./assets/images/Attacks/Waterhose.gif">
+                <img src="./assets/images/Headshots/Toy_Chica.png" alt="Toy Chica">
+            </div>
+            <div class="character-headshot" data-gif="./assets/images/Characters/Adventure_Toy_Freddy.gif"
+                data-attack1="./assets/images/Attacks/Mic_Toss.gif"
+                data-attack2="./assets/images/Attacks/Party_Favors.gif"
+                data-attack3="./assets/images/Attacks/Speed_Song.gif">
+                <img src="./assets/images/Headshots/Toy_Freddy.png" alt="Toy Freddy">
+            </div>
+            <div class="character-headshot" data-gif="./assets/images/Characters/Adventure_Mangle.gif"
+                data-attack1="./assets/images/Attacks/Hook.gif" data-attack2="./assets/images/Attacks/Poppers.gif"
+                data-attack3="./assets/images/Attacks/Prize_Ball.gif">
+                <img src="./assets/images/Headshots/Mangle.png" alt="Mangle">
+            </div>
+            <div class="character-headshot" data-gif="./assets/images/Characters/Adventure_Balloon_Boy.gif"
+                data-attack1="./assets/images/Attacks/Balloons.gif"
+                data-attack2="./assets/images/Attacks/Hot_Cheese.gif"
+                data-attack3="./assets/images/Attacks/Munchies.gif">
+                <img src="./assets/images/Headshots/Balloon_Boy.png" alt="Balloon Boy">
+            </div>
+            <div class="character-headshot" data-gif="./assets/images/Characters/Adventure_JJ.gif"
+                data-attack1="./assets/images/Attacks/Balloons.gif" data-attack2="./assets/images/Attacks/Poppers.gif"
+                data-attack3="./assets/images/Attacks/Unscrew.gif">
+                <img src="./assets/images/Headshots/JJ.png" alt="JJ">
+            </div>
+            <div class="character-headshot" data-gif="./assets/images/Characters/Adventure_Phantom_Freddy.gif"
+                data-attack1="./assets/images/Attacks/Sludge.gif" data-attack2="./assets/images/Attacks/Rainy_Day.gif"
+                data-attack3="./assets/images/Attacks/Gloom_Song.gif">
+                <img src="./assets/images/Headshots/Phantom_Freddy.png" alt="Phantom Freddy">
+            </div>
+            <div class="character-headshot" data-gif="./assets/images/Characters/Adventure_Phantom_Chica.gif"
+                data-attack1="./assets/images/Attacks/Toxic_Bite.gif" data-attack2="./assets/images/Attacks/Sludge.gif"
+                data-attack3="./assets/images/Attacks/Unscrew.gif">
+                <img src="./assets/images/Headshots/Phantom_Chica.png" alt="Phantom Chica">
+            </div>
+            <div class="character-headshot" data-gif="./assets/images/Characters/Adventure_Phantom_Balloon_Boy.gif"
+                data-attack1="./assets/images/Attacks/Gloom_Balloon.gif"
+                data-attack2="./assets/images/Attacks/Toxic_Balloon.gif"
+                data-attack3="./assets/images/Attacks/Rainy_Day.gif">
+                <img src="./assets/images/Headshots/Phantom_Balloon_Boy.png" alt="Phantom Balloon Boy">
+            </div>
+            <div class="character-headshot" data-gif="./assets/images/Characters/Adventure_Phantom_Foxy.gif"
+                data-attack1="./assets/images/Attacks/Jumpscare.gif"
+                data-attack2="./assets/images/Attacks/Toxic_Bite.gif"
+                data-attack3="./assets/images/Attacks/Unscrew.gif">
+                <img src="./assets/images/Headshots/Phantom_Foxy.png" alt="Phantom Foxy">
+            </div>
+            <div class="character-headshot" data-gif="./assets/images/Characters/Adventure_Phantom_Mangle.gif"
+                data-attack1="./assets/images/Attacks/Toxic_Bite.gif"
+                data-attack2="./assets/images/Attacks/Mystery_Box.gif"
+                data-attack3="./assets/images/Attacks/Pizza_Wheel_2.gif">
+                <img src="./assets/images/Headshots/Phantom_Mangle.png" alt="Phantom Mangle">
+            </div>
+            <div class="character-headshot" data-gif="./assets/images/Characters/Adventure_Withered_Bonnie.gif"
+                data-attack1="./assets/images/Attacks/Eye_Beam.gif"
+                data-attack2="./assets/images/Attacks/Pizza_Wheel.gif"
+                data-attack3="./assets/images/Attacks/Unscrew_2.gif">
+                <img src="./assets/images/Headshots/Withered_Bonnie.png" alt="Withered Bonnie">
+            </div>
+            <div class="character-headshot" data-gif="./assets/images/Characters/Adventure_Withered_Chica.gif"
+                data-attack1="./assets/images/Attacks/Bite.gif" data-attack2="./assets/images/Attacks/Cupcake.gif"
+                data-attack3="./assets/images/Attacks/Prize_Ball_2.gif">
+                <img src="./assets/images/Headshots/Withered_Chica.png" alt="Withered Chica">
+            </div>
+            <div class="character-headshot" data-gif="./assets/images/Characters/Adventure_Withered_Freddy.gif"
+                data-attack1="./assets/images/Attacks/Mic_Toss.gif"
+                data-attack2="./assets/images/Attacks/Gloom_Song.gif"
+                data-attack3="./assets/images/Attacks/Esc_Key.gif">
+                <img src="./assets/images/Headshots/Withered_Freddy.png" alt="Withered Freddy">
+            </div>
+            <div class="character-headshot" data-gif="./assets/images/Characters/Adventure_Withered_Foxy.gif"
+                data-attack1="./assets/images/Attacks/Hook.gif" data-attack2="./assets/images/Attacks/Rainy_Day.gif"
+                data-attack3="./assets/images/Attacks/Hot_Cheese_2.gif">
+                <img src="./assets/images/Headshots/Withered_Foxy.png" alt="Withered Foxy">
+            </div>
+            <div class="character-headshot" data-gif="./assets/images/Characters/Adventure_Shadow_Freddy.gif"
+                data-attack1="./assets/images/Attacks/Unscrew.gif" data-attack2="./assets/images/Attacks/Esc_Key.gif"
+                data-attack3="./assets/images/Attacks/Waterhose.gif">
+                <img src="./assets/images/Headshots/Shadow_Freddy.png" alt="Shadow Freddy">
+            </div>
+            <div class="character-headshot" data-gif="./assets/images/Characters/Adventure_Marionette.gif"
+                data-attack1="./assets/images/Attacks/Prize_Ball_2.gif"
+                data-attack2="./assets/images/Attacks/Mystery_Box.gif"
+                data-attack3="./assets/images/Attacks/Esc_Key.gif">
+                <img src="./assets/images/Headshots/Marionette.png" alt="Marionette">
+            </div>
+            <div class="character-headshot" data-gif="./assets/images/Characters/Adventure_Phantom_Marionette.gif"
+                data-attack1="./assets/images/Attacks/Jumpscare.gif"
+                data-attack2="./assets/images/Attacks/Hot_Cheese_2.gif"
+                data-attack3="./assets/images/Attacks/Mystery_Box.gif">
+                <img src="./assets/images/Headshots/Phantom_Marionette.png" alt="Phantom Marionette">
+            </div>
+            <div class="character-headshot" data-gif="./assets/images/Characters/Adventure_Golden_Freddy.gif"
+                data-attack1="./assets/images/Attacks/Jumpscare.gif"
+                data-attack2="./assets/images/Attacks/Rainy_Day_2.gif"
+                data-attack3="./assets/images/Attacks/Haunting.gif">
+                <img src="./assets/images/Headshots/Golden_Freddy.png" alt="Golden Freddy">
+            </div>
+            <div class="character-headshot" data-gif="./assets/images/Characters/Adventure_Paper_Pals.gif"
+                data-attack1="./assets/images/Attacks/Prize_Ball_2.gif"
+                data-attack2="./assets/images/Attacks/Mystery_Box_2.gif"
+                data-attack3="./assets/images/Attacks/Mimic_Ball.gif">
+                <img src="./assets/images/Headshots/Paperpals.png" alt="Paperpals">
+            </div>
+            <div class="character-headshot" data-gif="./assets/images/Characters/Adventure_Nightmare_Freddy.gif"
+                data-attack1="./assets/images/Attacks/Bite_2.gif" data-attack2="./assets/images/Attacks/Sludge.gif"
+                data-attack3="./assets/images/Attacks/Freddles.gif">
+                <img src="./assets/images/Headshots/Nightmare_Freddy.png" alt="Nightmare Freddy">
+            </div>
+            <div class="character-headshot" data-gif="./assets/images/Characters/Adventure_Nightmare_Bonnie.gif"
+                data-attack1="./assets/images/Attacks/Bite_2.gif" data-attack2="./assets/images/Attacks/Rainy_Day_2.gif"
+                data-attack3="./assets/images/Attacks/Pizza_Wheel_2.gif">
+                <img src="./assets/images/Headshots/Nightmare_Bonnie.png" alt="Nightmare Bonnie">
+            </div>
+            <div class="character-headshot" data-gif="./assets/images/Characters/Adventure_Nightmare_Chica.gif"
+                data-attack1="./assets/images/Attacks/Bite_2.gif" data-attack2="./assets/images/Attacks/Bad_Pizza.gif"
+                data-attack3="./assets/images/Attacks/Waterhose.gif">
+                <img src="./assets/images/Headshots/Nightmare_Chica.png" alt="Nightmare Chica">
+            </div>
+            <div class="character-headshot" data-gif="./assets/images/Characters/Adventure_Nightmare_Foxy.gif"
+                data-attack1="./assets/images/Attacks/Bite_2.gif" data-attack2="./assets/images/Attacks/Unscrew_2.gif"
+                data-attack3="./assets/images/Attacks/Hot_Cheese_2.gif">
+                <img src="./assets/images/Headshots/Nightmare_Foxy.png" alt="Nightmare Foxy">
+            </div>
+            <div class="character-headshot" data-gif="./assets/images/Characters/Adventure_Endo_01.gif"
+                data-attack1="./assets/images/Attacks/Power_Song.gif"
+                data-attack2="./assets/images/Attacks/Armor_Song.gif"
+                data-attack3="./assets/images/Attacks/Endo_Army.gif">
+                <img src="./assets/images/Headshots/Endo-01.png" alt="Endo-01">
+            </div>
+            <div class="character-headshot" data-gif="./assets/images/Characters/Adventure_Endo_02.gif"
+                data-attack1="./assets/images/Attacks/Speed_Song.gif"
+                data-attack2="./assets/images/Attacks/Endo_Army.gif"
+                data-attack3="./assets/images/Attacks/Neon_Wall.gif">
+                <img src="./assets/images/Headshots/Endo-02.png" alt="Endo-02">
+            </div>
+            <div class="character-headshot" data-gif="./assets/images/Characters/Adventure_Plushtrap.gif"
+                data-attack1="./assets/images/Attacks/Toxic_Bite.gif"
+                data-attack2="./assets/images/Attacks/Bad_Pizza.gif" data-attack3="./assets/images/Attacks/Sludge.gif">
+                <img src="./assets/images/Headshots/Plushtrap.png" alt="Plushtrap">
+            </div>
+            <div class="character-headshot" data-gif="./assets/images/Characters/Adventure_Endoplush.gif"
+                data-attack1="./assets/images/Attacks/Neon_Wall.gif" data-attack2="./assets/images/Attacks/Eye_Beam.gif"
+                data-attack3="./assets/images/Attacks/Waterhose_2.gif">
+                <img src="./assets/images/Headshots/Endoplush.png" alt="Endoplush">
+            </div>
+            <div class="character-headshot" data-gif="./assets/images/Characters/Adventure_Springtrap.gif"
+                data-attack1="./assets/images/Attacks/Bite_2.gif" data-attack2="./assets/images/Attacks/Springlocks.gif"
+                data-attack3="./assets/images/Attacks/Rainy_Day.gif">
+                <img src="./assets/images/Headshots/Springtrap.png" alt="Springtrap">
+            </div>
+            <div class="character-headshot" data-gif="./assets/images/Characters/Adventure_RWQFSFASXC.gif"
+                data-attack1="./assets/images/Attacks/Haunting.gif"
+                data-attack2="./assets/images/Attacks/Mimic_Ball.gif"
+                data-attack3="./assets/images/Attacks/Gift_Boxes.gif">
+                <img src="./assets/images/Headshots/RWQFSFASXC_(Shadow_Bonnie).png" alt="RWQFSFASXC (Shadow Bonnie)">
+            </div>
+            <div class="character-headshot" data-gif="./assets/images/Characters/Adventure_Crying_Child.gif"
+                data-attack1="./assets/images/Attacks/Power_Song.gif"
+                data-attack2="./assets/images/Attacks/Armor_Song.gif"
+                data-attack3="./assets/images/Attacks/Gift_Boxes.gif">
+                <img src="./assets/images/Headshots/Crying_Child.png" alt="Crying Child">
+            </div>
+            <div class="character-headshot" data-gif="./assets/images/Characters/Adventure_Funtime_Foxy.gif"
+                data-attack1="./assets/images/Attacks/Happy_Jam_2.gif"
+                data-attack2="./assets/images/Attacks/Cosmic_Song.gif"
+                data-attack3="./assets/images/Attacks/Gift_Boxes.gif">
+                <img src="./assets/images/Headshots/Funtime_Foxy.png" alt="Funtime Foxy">
+            </div>
+            <div class="character-headshot" data-gif="./assets/images/Characters/Adventure_Nightmare_Fredbear.gif"
+                data-attack1="./assets/images/Attacks/Toxic_Bite_2.gif"
+                data-attack2="./assets/images/Attacks/Freddles.gif"
+                data-attack3="./assets/images/Attacks/Mega_Bite.gif">
+                <img src="./assets/images/Headshots/Nightmare_Fredbear.png" alt="Nightmare Fredbear">
+            </div>
+            <div class="character-headshot" data-gif="./assets/images/Characters/Adventure_Nightmare.gif"
+                data-attack1="./assets/images/Attacks/Toxic_Bite_2.gif"
+                data-attack2="./assets/images/Attacks/Rainy_Day_2.gif"
+                data-attack3="./assets/images/Attacks/Mega_Bite.gif">
+                <img src="./assets/images/Headshots/Nightmare.png" alt="Nightmare">
+            </div>
+            <div class="character-headshot" data-gif="./assets/images/Characters/Adventure_Fredbear.gif"
+                data-attack1="./assets/images/Attacks/Mega_Bite.gif"
+                data-attack2="./assets/images/Attacks/Regen_Song.gif"
+                data-attack3="./assets/images/Attacks/Mimic_Ball.gif">
+                <img src="./assets/images/Headshots/Fredbear.png" alt="Fredbear">
+            </div>
+            <div class="character-headshot" data-gif="./assets/images/Characters/Adventure_Spring_Bonnie.gif"
+                data-attack1="./assets/images/Attacks/Springlocks.gif"
+                data-attack2="./assets/images/Attacks/Happy_Jam_2.gif"
+                data-attack3="./assets/images/Attacks/Cosmic_Song.gif">
+                <img src="./assets/images/Headshots/Spring_Bonnie.png" alt="Spring Bonnie">
+            </div>
+            <div class="character-headshot" data-gif="./assets/images/Characters/Adventure_Jack_O_Bonnie.gif"
+                data-attack1="./assets/images/Attacks/Haunting.gif"
+                data-attack2="./assets/images/Attacks/Jack-O-Bomb.gif"
+                data-attack3="./assets/images/Attacks/Slasher.gif">
+                <img src="./assets/images/Headshots/Jack-O-Bonnie.png" alt="Jack-O-Bonnie">
+            </div>
+            <div class="character-headshot" data-gif="./assets/images/Characters/Adventure_Jack_O_Chica.gif"
+                data-attack1="./assets/images/Attacks/Haunting.gif"
+                data-attack2="./assets/images/Attacks/Jack-O-Bomb.gif"
+                data-attack3="./assets/images/Attacks/Buzzsaw.gif">
+                <img src="./assets/images/Headshots/Jack-O-Chica.png" alt="Jack-O-Chica">
+            </div>
+            <div class="character-headshot" data-gif="./assets/images/Characters/Adventure_Animdude.gif"
+                data-attack1="./assets/images/Attacks/Neon_Wall.gif"
+                data-attack2="./assets/images/Attacks/Mega_Virus.gif"
+                data-attack3="./assets/images/Attacks/4th_wall.gif">
+                <img src="./assets/images/Headshots/Animdude.png" alt="Animdude">
+            </div>
+            <div class="character-headshot" data-gif="./assets/images/Characters/Adventure_Mr_Chipper.gif"
+                data-attack1="./assets/images/Attacks/Hocus_Pocus.gif"
+                data-attack2="./assets/images/Attacks/Buzzsaw.gif"
+                data-attack3="./assets/images/Attacks/Mimic_Ball.gif">
+                <img src="./assets/images/Headshots/Chipper.png" alt="Chipper">
+            </div>
+            <div class="character-headshot" data-gif="./assets/images/Characters/Adventure_Nightmare_Balloon_Boy.gif"
+                data-attack1="./assets/images/Attacks/Mega_Bite.gif"
+                data-attack2="./assets/images/Attacks/Bubble_Breath.gif"
+                data-attack3="./assets/images/Attacks/Balloons_2.gif">
+                <img src="./assets/images/Headshots/Nightmare_Balloon_Boy.png" alt="Nightmare Balloon Boy">
+            </div>
+            <div class="character-headshot" data-gif="./assets/images/Characters/Adventure_Nightmarionne.gif"
+                data-attack1="./assets/images/Attacks/Prize_Ball_2.gif"
+                data-attack2="./assets/images/Attacks/Bubble_Breath.gif"
+                data-attack3="./assets/images/Attacks/4th_wall.gif">
+                <img src="./assets/images/Headshots/Nightmarionne.png" alt="Nightmarionne">
+            </div>
+            <div class="character-headshot" data-gif="./assets/images/Characters/Adventure_Coffee.gif"
+                data-attack1="./assets/images/Attacks/Gift_Boxes.gif"
+                data-attack2="./assets/images/Attacks/Mega_Virus.gif"
+                data-attack3="./assets/images/Attacks/Neon_Wall_2.gif">
+                <img src="./assets/images/Headshots/Coffee.png" alt="Coffee">
+            </div>
+            <div class="character-headshot" data-gif="./assets/images/Characters/Adventure_Purple_Guy.gif"
+                data-attack1="./assets/images/Attacks/Speed_Song.gif" data-attack2="./assets/images/Attacks/Slasher.gif"
+                data-attack3="./assets/images/Attacks/Hocus_Pocus.gif">
+                <img src="./assets/images/Headshots/Purple_Guy.png" alt="Purple Guy">
+            </div>
+        </div>
+        <div class="right">
+            <div class="info-panel">
+                <!-- Element GIF zostanie dodany tutaj przez JavaScript -->
+
+                <div class="attacks"></div>
+            </div>
+            <div class="reset-done">
+                <img class="reset" src="./assets/images/Other/reset.gif" alt="First Image" class="info-image">
+                <img src="./assets/images/Other/done.gif" alt="Second Image" class="info-image">
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/selectmarkers.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+html,
+body {
+  background-color: black;
+  margin: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  box-sizing: border-box;
+  cursor: url("../assets/images/Other/4708.cur"), default;
+}
+
+body {
+  visibility: hidden;
+}
+
+body.loaded {
+  visibility: visible;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* Kontener dla menu i overlay */
+.menu-container {
+  position: relative;
+  overflow: hidden; /* Dodaj, aby zachować proporcje */
+  border: 2px solid white;
+  min-width: 840px;
+  min-height: 483px;
+  max-width: 840px;
+  max-height: 483px;
+  background: url("../assets/images/Other/2384.png") center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Początkowy stan .overlay - niewidoczny */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0; /* Początkowa przezroczystość to 0, czyli niewidoczny */
+  z-index: 999; /* Wyższy z-index niż .menu, aby overlay był nad nim */
+  pointer-events: none; /* Pozwól na interakcję z menu, mimo że overlay jest ukryte */
+  transition: opacity 1s ease-out; /* Animacja zmieniająca opacity */
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.slot-selection {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
